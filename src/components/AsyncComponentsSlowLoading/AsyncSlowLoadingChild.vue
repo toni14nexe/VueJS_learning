@@ -1,3 +1,5 @@
+<!-- pokušati u Vue3, u Vue2 ne radi -->
+
 <template>
     <div>
         <h1>Async Child</h1>
@@ -17,7 +19,7 @@
         loading: LoadingComponent,
         error: ErrorComponent,
         timeout: 500
-    })
+    });
 
     export default {
         data(){

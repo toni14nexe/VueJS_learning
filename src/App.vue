@@ -11,8 +11,12 @@
         <button @click="component='event-parent-component'">Event</button>
         <button @click="component='slots-main'">Slots</button>
         <button @click="component='async-main'">Async</button>
-        <button @click="component='async-slow-loading-main'">Async Slow Loading</button>
+        <button @click="component='async-slow-loading-main'" class="btn-red">Async Slow Loading</button>
+        <button @click="component='plugin-slots-mixins'" class="btn-red">Plugin with slots and mixins</button>
 
+        <br><br>
+        <h3 class="text-red text-inline">Red ones </h3>
+        <h3 class="text-inline">doesn't work in Vue2 becouse it's Vue3 (some of them aren't finished)</h3>
         <br><br><br><hr>
 
         <keep-alive><component v-bind:is="component"/></keep-alive>
@@ -29,6 +33,7 @@
   import SlotsMain from './components/Slots/SlotsMain.vue';
   import AsyncMain from './components/AsyncComponents/AsyncMain.vue';
   import AsyncSlowLoadingMain from './components/AsyncComponentsSlowLoading/AsyncSlowLoadingMain.vue';
+  import PluginSlotsMixins from './components/PluginWithSlotsAndMixins/App.vue';
 
   export default {
     name: 'App',
@@ -41,11 +46,12 @@
       'event-parent-component': EventParentComponent,
       'slots-main': SlotsMain,
       'async-main': AsyncMain,
-      'async-slow-loading-main': AsyncSlowLoadingMain
+      'async-slow-loading-main': AsyncSlowLoadingMain,
+      'plugin-slots-mixins': PluginSlotsMixins
     },
     data(){
       return{
-          component: 'async-slow-loading-main'
+          component: 'plugin-slots-mixins'
       }
     }
   }
@@ -63,6 +69,19 @@
 
 button {
   margin-right: 10px;
+}
+
+.btn-red {
+  background-color: red;
+  color: white;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-inline {
+  display: inline;
 }
 </style>
 

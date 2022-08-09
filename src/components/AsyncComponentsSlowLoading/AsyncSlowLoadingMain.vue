@@ -1,3 +1,5 @@
+<!-- pokušati u Vue3, u Vue2 ne radi -->
+
 <template>
     <div>
         <async-child></async-child>
